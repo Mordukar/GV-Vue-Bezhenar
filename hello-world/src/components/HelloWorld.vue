@@ -1,13 +1,13 @@
 <template>
   <div class="hello">
-    <input v-model.number="operand1" type="text">
-    <input v-model.number="operand2" type="text">
+    <input v-model.number="operand1" />
+    <input v-model.number="operand2" />
     = {{ result }}
     <div>
-      <button @click="calculate">+</button>
-      <button @click="calculate">-</button>
-      <button @click="calculate">*</button>
-      <button @click="calculate">/</button>
+      <button @click="calculate($event)">+</button>
+      <button @click="calculate($event)">-</button>
+      <button @click="calculate($event)">*</button>
+      <button @click="calculate($event)">/</button>
     </div>
   </div>
 </template>
@@ -24,7 +24,8 @@ export default {
 
   },
   methods: {
-    calculate(operand) {
+    calculate(e) {
+      console.log(e);
       this.result = this.operand1 + this.operand2
     }
   }
