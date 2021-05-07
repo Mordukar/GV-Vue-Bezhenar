@@ -19,7 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="203ab136-4709-4ccf-b7ae-ec7824a5ea29" name="Default Changelist" comment="">
+    <list default="true" id="203ab136-4709-4ccf-b7ae-ec7824a5ea29" name="Default Changelist" comment="Fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hello-world/src/components/HelloWorld.vue" beforeDir="false" afterPath="$PROJECT_DIR$/hello-world/src/components/HelloWorld.vue" afterDir="false" />
     </list>
@@ -44,7 +44,14 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="settings.javascript.linters.eslint" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -59,8 +66,17 @@
       <workItem from="1620227320575" duration="2691000" />
       <workItem from="1620230529081" duration="53000" />
       <workItem from="1620281405930" duration="2871000" />
-      <workItem from="1620313110494" duration="335000" />
+      <workItem from="1620313110494" duration="491000" />
+      <workItem from="1620367359075" duration="4330000" />
     </task>
+    <task id="LOCAL-00001" summary="Fix">
+      <created>1620313466968</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1620313466968</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -78,14 +94,22 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1620289052284">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1620289052284" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1620288987743">
+    <state x="350" y="163" key="SettingsEditor" timestamp="1620369379000">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1620288987743" />
+    <state x="350" y="163" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1620369379000" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1620313470434">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1620313470434" />
   </component>
 </project>
