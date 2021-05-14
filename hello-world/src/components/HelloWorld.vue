@@ -4,12 +4,11 @@
     <input v-model.number="operand2"/>
     = {{ result }}
     <div>
-      <button @click="calculate($event)">+</button>
-      <button @click="calculate($event)">-</button>
-      <button @click="calculate($event)">*</button>
-      <button @click="calculate($event)">/</button>
-      <button @click="calculate($event)">/</button>
-      <button @click="calculate($event)">/</button>
+      <button @click="calculate('+')">+</button>
+      <button @click="calculate('-')">-</button>
+      <button @click="calculate('*')">*</button>
+      <button @click="calculate('/')">/</button>
+      <button @click="calculate('^')">^</button>
     </div>
   </div>
 </template>
@@ -24,24 +23,17 @@ export default {
   }),
   props: {},
   methods: {
-    calculate (e) {
-      console.log(e.target.innerHTML)
-      // eslint-disable-next-line no-unused-vars
-      const operation = e.target.innerHTML
-      // let operation = switch (e.target.innerHTML) {
-      //   case '+':
-      //     return;
-      //   case '-':
-      //     return;
-      //   case '*':
-      //     return;
-      //   case '/':
-      //     return;
-      //   default:
-      //     alert( "Нет таких значений" );
-      // }
-      // eslint-disable-next-line no-eval
-      this.result = eval(this.operand1 + e.target.innerHTML + this.operand2)
+    calculate (op) {
+      const { operand1, operand2 } = this
+      const calcOperations = {
+        '+': () => operand1 + operand2,
+        '-': () => operand1 - operand2,
+        '*': () => operand1 * operand2,
+        '/': () => operand1 / operand2,
+        '^': () => Math.pow(operand1, operand2)
+      }
+      const finalResult = (calcOperations[op]())
+      this.result = Math.floor(finalResult)
     }
   }
 }

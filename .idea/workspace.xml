@@ -16,10 +16,25 @@
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
-    <select />
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:origin/lesson1" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="203ab136-4709-4ccf-b7ae-ec7824a5ea29" name="Default Changelist" comment="Fix">
+    <list default="true" id="203ab136-4709-4ccf-b7ae-ec7824a5ea29" name="Default Changelist" comment="Fix operators">
+      <change afterPath="$PROJECT_DIR$/hello-world/dist/css/app.e1ced0fd.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hello-world/dist/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hello-world/dist/img/logo.82b9c7a5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hello-world/dist/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hello-world/dist/js/app.eb44509d.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hello-world/dist/js/app.eb44509d.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hello-world/dist/js/chunk-vendors.8fff03bd.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hello-world/dist/js/chunk-vendors.8fff03bd.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hello-world/src/components/HelloWorld.vue" beforeDir="false" afterPath="$PROJECT_DIR$/hello-world/src/components/HelloWorld.vue" afterDir="false" />
     </list>
@@ -67,7 +82,8 @@
       <workItem from="1620230529081" duration="53000" />
       <workItem from="1620281405930" duration="2871000" />
       <workItem from="1620313110494" duration="491000" />
-      <workItem from="1620367359075" duration="4330000" />
+      <workItem from="1620367359075" duration="4383000" />
+      <workItem from="1620992243099" duration="1904000" />
     </task>
     <task id="LOCAL-00001" summary="Fix">
       <created>1620313466968</created>
@@ -76,7 +92,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620313466968</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Fix operators">
+      <created>1620373383495</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1620373383495</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -87,7 +110,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/lesson1" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -96,20 +131,29 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix" />
+    <MESSAGE value="Fix operators" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix operators" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1620289052284">
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1620994162099">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1620289052284" />
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1620994162099" />
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1620373412931">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1620373412931" />
     <state x="350" y="163" key="SettingsEditor" timestamp="1620369379000">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="350" y="163" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1620369379000" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1620313470434">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1620373387769">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1620313470434" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1620373387769" />
+    <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1620992280231">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1620992280231" />
   </component>
 </project>
