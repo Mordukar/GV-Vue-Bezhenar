@@ -10,6 +10,26 @@
       <button @click="calculate('/')">/</button>
       <button @click="calculate('^')">^</button>
     </div>
+<!--    <div>-->
+<!--      <input type="checkbox" id="checkbox" v-model="checked">-->
+<!--      <label for="checkbox">{{ checked }}</label>-->
+<!--    </div>-->
+    <div>
+      <button
+        v-for="item in items"
+        :key="item"
+        @click="operand1 + item"
+      >
+        {{ item }}
+      </button>
+    </div>
+<!--    <div>-->
+<!--      <input type="radio" id="one" value="Один" v-model="picked">-->
+<!--      <label for="one">Операнд 1</label>-->
+<!--      <br>-->
+<!--      <input type="radio" id="two" value="Два" v-model="picked">-->
+<!--      <label for="two">Операнд 2</label>-->
+<!--    </div>-->
   </div>
 </template>
 
@@ -19,7 +39,20 @@ export default {
   data: () => ({
     operand1: 0,
     operand2: 0,
-    result: 0
+    result: 0,
+    items: [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    checked: false,
+    picked: false
   }),
   props: {},
   methods: {
