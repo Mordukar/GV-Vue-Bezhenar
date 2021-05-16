@@ -15,9 +15,13 @@
     <!--      <label for="checkbox">{{ checked }}</label>-->
     <!--    </div>-->
     <div>
-      <button v-for="item in items" :key="item" @click="() => operand1 + item">
+      <button
+      v-for="item in items"
+      :key="item"
+      @click="sendKey(item)">
         {{ item }}
       </button>
+      <button @click="deleteKey">&larr;</button>
     </div>
     <!--    <div>-->
     <!--      <input type="radio" id="one" value="Один" v-model="picked">-->
@@ -33,8 +37,8 @@
 export default {
   name: 'HelloWorld',
   data: () => ({
-    operand1: 0,
-    operand2: 0,
+    operand1: '',
+    operand2: '',
     result: 0,
     items: [1, 2, 3, 4, 5, 6, 7, 8, 9],
     checked: false,
@@ -53,6 +57,11 @@ export default {
       }
       const finalResult = calcOperations[op]()
       this.result = Math.floor(finalResult)
+    },
+    sendKey (item) {
+      this.operand1 = this.operand1 + item
+    },
+    deleteKey () {
     }
   }
 }
