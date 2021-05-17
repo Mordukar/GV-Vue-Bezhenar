@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
-    <input v-model.number="operand1" />
-    <input v-model.number="operand2" />
+    <input v-model.number="operand1" ref="operand1"/>
+    <input v-model.number="operand2" ref="operand2"/>
     = {{ result }}
     <div>
       <button @click="calculate('+')">+</button>
@@ -10,26 +10,29 @@
       <button @click="calculate('/')">/</button>
       <button @click="calculate('^')">^</button>
     </div>
-    <!--    <div>-->
-    <!--      <input type="checkbox" id="checkbox" v-model="checked">-->
-    <!--      <label for="checkbox">{{ checked }}</label>-->
-    <!--    </div>-->
     <div>
-      <button
-      v-for="item in items"
-      :key="item"
-      @click="sendKey(item)">
-        {{ item }}
-      </button>
-      <button @click="deleteKey">&larr;</button>
+    <input type="checkbox" id="checkbox" v-model="checked">
+    <label for="checkbox">Отобразить экранную клавиатуру</label>
     </div>
-    <!--    <div>-->
-    <!--      <input type="radio" id="one" value="Один" v-model="picked">-->
-    <!--      <label for="one">Операнд 1</label>-->
-    <!--      <br>-->
-    <!--      <input type="radio" id="two" value="Два" v-model="picked">-->
-    <!--      <label for="two">Операнд 2</label>-->
-    <!--    </div>-->
+    <div v-show="checked === true" class="wrapper">
+      <div class="buttons">
+        <button
+        v-for="item in items"
+        :key="item"
+        @click="sendKey(item)">
+          {{ item }}
+        </button>
+        <button @click="deleteKey">&larr;</button>
+      </div>
+      <div class="inputs">
+        <input @click="chooseInput1" checked type="radio" id="one" value="one" v-model="picked">
+        <label for="one">Операнд 1</label>
+        <br>
+        <input @click="chooseInput2" type="radio" id="two" value="two" v-model="picked">
+         <label for="two">Операнд 2</label>
+      </div>
+    </div>
+
   </div>
 </template>
 
@@ -37,12 +40,12 @@
 export default {
   name: 'HelloWorld',
   data: () => ({
+    checked: false,
     operand1: '',
     operand2: '',
     result: 0,
     items: [1, 2, 3, 4, 5, 6, 7, 8, 9],
-    checked: false,
-    picked: false
+    picked: 'one'
   }),
   props: {},
   methods: {
@@ -59,9 +62,28 @@ export default {
       this.result = Math.floor(finalResult)
     },
     sendKey (item) {
-      this.operand1 = this.operand1 + item
+      if (this.picked === 'one') {
+        this.operand1 = this.operand1 + item
+      } else if (this.picked === 'two') {
+        this.operand2 = this.operand2 + item
+      }
     },
     deleteKey () {
+      const str1 = String(this.operand1)
+      const str2 = String(this.operand2)
+      if (this.picked === 'one') {
+        this.operand1 = str1.slice(0, -1)
+      } else if (this.picked === 'two') {
+        this.operand2 = str2.slice(0, -1)
+      }
+    },
+    chooseInput1 () {
+      const choose1 = this.$refs.operand1
+      choose1.focus()
+    },
+    chooseInput2 () {
+      const choose2 = this.$refs.operand2
+      choose2.focus()
     }
   }
 }
