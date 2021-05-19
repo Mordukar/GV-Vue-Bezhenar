@@ -5,7 +5,7 @@
     </header>
     <main>
       <Button @openForm="openForm"/>
-      <PaymentForm v-show="statusForm === 'open'" @add="onDataAdded" />
+      <PaymentForm v-show="isActive" @add="onDataAdded" />
       <PaymentsList :items="paymentsList" />
     </main>
   </div>
@@ -24,7 +24,7 @@ export default {
   },
   data () {
     return {
-      statusForm: 'close',
+      isActive: false,
       paymentsList: [
         {
           date: '13.05.2021',
@@ -53,8 +53,8 @@ export default {
     onDataAdded (data) {
       this.paymentsList.push(data)
     },
-    openForm (data) {
-      this.statusForm = data
+    openForm () {
+      this.isActive = !this.isActive
     }
   }
 }

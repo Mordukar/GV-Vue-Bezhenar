@@ -7,10 +7,9 @@ export default {
   name: 'Button',
   methods: {
     openForm () {
-      this.$emit('openForm', 'open')
+      this.$emit('openForm')
     }
   }
-
 }
 </script>
 
