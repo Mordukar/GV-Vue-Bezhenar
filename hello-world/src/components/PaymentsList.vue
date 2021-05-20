@@ -1,26 +1,24 @@
 <template>
-  <div>
+  <transition name="fadeItem">
     <table class="resp-tab">
       <thead>
-      <tr>
-        <th>#</th>
-        <th>Date</th>
-        <th>Category</th>
-        <th>Value</th>
-      </tr>
+        <tr>
+          <th>#</th>
+          <th>Date</th>
+          <th>Category</th>
+          <th>Value</th>
+        </tr>
       </thead>
+      <tbody>
+        <tr v-for="(item, index) in items" :key="index" class="resp-tab">
+          <th>{{ index }}</th>
+          <th>{{ item.date }}</th>
+          <th>{{ item.category}}</th>
+          <th>{{ item.price }}</th>
+        </tr>
+      </tbody>
     </table>
-    <table v-for="(item, index) in items" :key="index" class="resp-tab">
-      <thead>
-      <tr>
-        <th>{{ index }}</th>
-        <th>{{ item.date }}</th>
-        <th>{{ item.category}}</th>
-        <th>{{ item.price }}</th>
-      </tr>
-      </thead>
-    </table>
-  </div>
+  </transition>
 </template>
 
 <script>
@@ -36,26 +34,24 @@ export default {
 }
 </script>
 
-<style lang="css">
+<style lang="scss">
 .resp-tab {
-  border-radius: 5px;
+  margin-top: 50px;
   font-weight: normal;
   border: none;
   border-collapse: collapse;
-  width: 100%;
-  max-width: 100%;
+  max-width: 90%;
 }
 .resp-tab th, .resp-tab td {
   padding: 10px 20px;
   font-size: 13px;
-  border: none;
   font-family: Verdana, sans-serif;
   border: 1px solid #337AB7;
   vertical-align: top;
 }
 .resp-tab th {
-  color: #FFF;
-  background: #337AB7;
+  color: black;
+  background: white;
   font-weight: bold;
   border: 1px solid #1a4a73;
   text-transform: uppercase;

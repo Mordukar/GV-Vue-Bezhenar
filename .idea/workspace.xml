@@ -21,18 +21,18 @@
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:origin/lesson1" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:origin/main" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="203ab136-4709-4ccf-b7ae-ec7824a5ea29" name="Default Changelist" comment="Fix">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello-world/dist/img/logo.82b9c7a5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello-world/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/hello-world/dist/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello-world/dist/js/chunk-vendors.8fff03bd.js" beforeDir="false" afterPath="$PROJECT_DIR$/hello-world/dist/js/chunk-vendors.8fff03bd.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hello-world/dist/css/app.0ba9f31a.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hello-world/dist/js/app.f1aec3a3.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hello-world/dist/js/app.f1aec3a3.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hello-world/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/hello-world/src/App.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hello-world/src/components/Button.vue" beforeDir="false" afterPath="$PROJECT_DIR$/hello-world/src/components/Button.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello-world/src/components/PaymentForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/hello-world/src/components/PaymentForm.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hello-world/src/components/PaymentsList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/hello-world/src/components/PaymentsList.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -119,7 +119,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/lesson1" />
+                        <option value="origin/main" />
                       </list>
                     </value>
                   </entry>

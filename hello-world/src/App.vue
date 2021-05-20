@@ -1,13 +1,15 @@
 <template>
   <div id="app">
-    <header class="header">
-      My personal costs
-    </header>
-    <main>
-      <Button @openForm="openForm"/>
-      <PaymentForm v-show="isActive" @add="onDataAdded" />
-      <PaymentsList :items="paymentsList" />
-    </main>
+        <header >
+          <h1 class="header">My personal costs</h1>
+        </header>
+        <main>
+          <Button @openForm="openForm"/>
+          <transition name="fade">
+            <PaymentForm v-show="isActive" @add="onDataAdded" />
+          </transition>
+          <PaymentsList :items="paymentsList" />
+        </main>
   </div>
 </template>
 
@@ -61,12 +63,24 @@ export default {
 </script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  #app{
+    max-width : 90%;
+    margin : 0 auto;
+  }
+  .header {
+    font-size : 56px;
+    text-align : left;
+  }
+  .fade-enter-active, .fade-leave-active {
+    transition-property: all;
+    transition-duration: .3s;
+    transition-timing-function: ease;
+  }
+  .fade-enter, .fade-leave-to /* .fade-leave-active до версии 2.1.8 */ {
+    opacity: 0;
+    overflow: hidden;
+    max-height : 0;
+    margin: 0;
+    padding: 0;
+  }
 </style>
