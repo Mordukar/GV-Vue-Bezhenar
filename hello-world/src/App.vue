@@ -9,6 +9,7 @@
             <PaymentForm v-show="isActive" @add="onDataAdded" />
           </transition>
           <PaymentsList/>
+          <Pagination/>
         </main>
   </div>
 </template>
@@ -17,13 +18,15 @@
 import PaymentsList from './components/PaymentsList'
 import PaymentForm from './components/PaymentForm'
 import Button from './components/Button'
+import Pagination from './components/Pagination'
 import { mapActions } from 'vuex'
 export default {
   name: 'App',
   components: {
     PaymentsList,
     PaymentForm,
-    Button
+    Button,
+    Pagination
   },
   data () {
     return {

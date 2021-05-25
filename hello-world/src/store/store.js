@@ -16,7 +16,8 @@ export default new Vuex.Store({
     }
   },
   getters: {
-    getPaymentsList: state => state.paymentsList
+    getPaymentsList: state => state.paymentsList,
+    getPaymentsListLenght: state => state.paymentsList.length
   },
   actions: {
     fetchData ({ commit }) {
