@@ -8,7 +8,7 @@
           <transition name="fade">
             <PaymentForm v-show="isActive" @add="onDataAdded" />
           </transition>
-          <PaymentsList :items="paymentsList" />
+          <PaymentsList/>
         </main>
   </div>
 </template>
@@ -17,6 +17,7 @@
 import PaymentsList from './components/PaymentsList'
 import PaymentForm from './components/PaymentForm'
 import Button from './components/Button'
+import { mapActions } from 'vuex'
 export default {
   name: 'App',
   components: {
@@ -26,38 +27,22 @@ export default {
   },
   data () {
     return {
-      isActive: false,
-      paymentsList: [
-        {
-          date: '13.05.2021',
-          category: 'Education',
-          price: 123
-        },
-        {
-          date: '12.05.2021',
-          category: 'Education',
-          price: 456
-        },
-        {
-          date: '11.05.2021',
-          category: 'Education',
-          price: 789
-        },
-        {
-          date: '10.05.2021',
-          category: 'Education',
-          price: 0
-        }
-      ]
+      isActive: false
     }
   },
   methods: {
+    ...mapActions([
+      'fetchData'
+    ]),
     onDataAdded (data) {
       this.paymentsList.push(data)
     },
     openForm () {
       this.isActive = !this.isActive
     }
+  },
+  mounted () {
+    this.fetchData()
   }
 }
 </script>

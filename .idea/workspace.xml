@@ -19,21 +19,27 @@
     <select>
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:origin/main" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:lesson3" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="203ab136-4709-4ccf-b7ae-ec7824a5ea29" name="Default Changelist" comment="Fix">
-      <change afterPath="$PROJECT_DIR$/hello-world/dist/css/app.0ba9f31a.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hello-world/dist/js/app.f1aec3a3.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hello-world/dist/js/app.f1aec3a3.js.map" afterDir="false" />
+    <list default="true" id="203ab136-4709-4ccf-b7ae-ec7824a5ea29" name="Default Changelist" comment="Finale commit">
+      <change afterPath="$PROJECT_DIR$/hello-world/src/store/store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello-world/dist/css/app.0ba9f31a.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello-world/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/hello-world/dist/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello-world/dist/js/app.f1aec3a3.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello-world/dist/js/app.f1aec3a3.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello-world/dist/js/chunk-vendors.8fff03bd.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello-world/dist/js/chunk-vendors.8fff03bd.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello-world/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/hello-world/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello-world/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/hello-world/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hello-world/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/hello-world/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello-world/src/components/Button.vue" beforeDir="false" afterPath="$PROJECT_DIR$/hello-world/src/components/Button.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hello-world/src/components/PaymentForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/hello-world/src/components/PaymentForm.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hello-world/src/components/PaymentsList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/hello-world/src/components/PaymentsList.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello-world/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/hello-world/src/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,6 +93,7 @@
       <workItem from="1620367359075" duration="4383000" />
       <workItem from="1620992243099" duration="1904000" />
       <workItem from="1621449029681" duration="1753000" />
+      <workItem from="1621939666953" duration="8943000" />
     </task>
     <task id="LOCAL-00001" summary="Fix">
       <created>1620313466968</created>
@@ -102,7 +109,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620373383495</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Finale commit">
+      <created>1621522673455</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1621522673455</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -119,7 +133,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/main" />
+                        <option value="lesson3" />
                       </list>
                     </value>
                   </entry>
@@ -135,25 +149,26 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Fix" />
     <MESSAGE value="Fix operators" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix operators" />
+    <MESSAGE value="Finale commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finale commit" />
   </component>
   <component name="WindowStateProjectService">
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1620994162099">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1620994162099" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1620373412931">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1621522841362">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1620373412931" />
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1621522841362" />
     <state x="350" y="163" key="SettingsEditor" timestamp="1620369379000">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="350" y="163" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1620369379000" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1620373387769">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1621522684931">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1620373387769" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1621522684931" />
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1620992280231">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

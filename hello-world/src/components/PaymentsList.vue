@@ -10,7 +10,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="(item, index) in items" :key="index" class="resp-tab">
+        <tr v-for="(item, index) in getPaymentsList" :key="index" class="resp-tab">
           <th>{{ index }}</th>
           <th>{{ item.date }}</th>
           <th>{{ item.category}}</th>
@@ -22,14 +22,23 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   props: {
     items: Array
+  },
+  computed: {
+    ...mapGetters([
+      'getPaymentsList'
+    ])
   },
   methods: {
     doSomething () {
       console.log(this.items)
     }
+  },
+  mounted () {
+    console.log(this.getPaymentsList)
   }
 }
 </script>

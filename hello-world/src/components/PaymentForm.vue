@@ -8,6 +8,9 @@
 </template>
 
 <script>
+
+import { mapMutations } from 'vuex'
+
 export default {
   data () {
     return {
@@ -20,9 +23,12 @@ export default {
     items: Array
   },
   methods: {
+    ...mapMutations([
+      'setNewPaymentsListData'
+    ]),
     save () {
       const { date, category, price } = this
-      this.$emit('add', { date, category, price })
+      this.setNewPaymentsListData({ date, category, price })
     }
   }
 }
