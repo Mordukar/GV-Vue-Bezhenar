@@ -8,9 +8,7 @@
           <transition name="fade">
             <PaymentForm v-show="isActive" @add="onDataAdded" />
           </transition>
-<!--          <PaymentsList v-show="currentPage"/>-->
-          <PaymentsList :currentPage="currentPage"/>
-          <Pagination @paginated="paginated"/>
+          <PaymentsList/>
         </main>
   </div>
 </template>
@@ -19,20 +17,17 @@
 import PaymentsList from './components/PaymentsList'
 import PaymentForm from './components/PaymentForm'
 import Button from './components/Button'
-import Pagination from './components/Pagination'
 import { mapActions } from 'vuex'
 export default {
   name: 'App',
   components: {
     PaymentsList,
     PaymentForm,
-    Button,
-    Pagination
+    Button
   },
   data () {
     return {
-      isActive: false,
-      currentPage: 0
+      isActive: false
     }
   },
   methods: {
@@ -44,10 +39,6 @@ export default {
     },
     openForm () {
       this.isActive = !this.isActive
-    },
-    paginated (el) {
-      console.log(el)
-      this.currentPage = el
     }
   },
   mounted () {

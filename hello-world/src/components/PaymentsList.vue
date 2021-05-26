@@ -1,29 +1,48 @@
 <template>
-  <transition name="fadeItem">
-    <table class="resp-tab">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Date</th>
-          <th>Category</th>
-          <th>Value</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="(item, index) in getPaymentsList" :key="index" class="resp-tab">
-          <th>{{ item.id }}</th>
-          <th>{{ item.date }}</th>
-          <th>{{ item.category}}</th>
-          <th>{{ item.price }}</th>
-        </tr>
-      </tbody>
-    </table>
-  </transition>
+  <div>
+    <transition name="fadeItem">
+      <table class="resp-tab">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Date</th>
+            <th>Category</th>
+            <th>Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(item, index) in currentElements" :key="index" class="resp-tab">
+            <th>{{ item.id }}</th>
+            <th>{{ item.date }}</th>
+            <th>{{ item.category}}</th>
+            <th>{{ item.price }}</th>
+          </tr>
+        </tbody>
+      </table>
+    </transition>
+    <Pagination
+      :length="getPaymentsList.length"
+      :numberPage="numberPage"
+      :cur="page"
+      @paginate="onPaginate"
+    />
+  </div>
 </template>
 
 <script>
+import Pagination from './Pagination'
 import { mapGetters } from 'vuex'
 export default {
+  name: 'PaymentsList',
+  components: {
+    Pagination
+  },
+  data () {
+    return {
+      page: 1,
+      numberPage: 10
+    }
+  },
   props: {
     items: Array,
     currentPage: Number
@@ -31,15 +50,19 @@ export default {
   computed: {
     ...mapGetters([
       'getPaymentsList'
-    ])
+    ]),
+    currentElements () {
+      const { page, numberPage } = this
+      return this.getPaymentsList.slice(numberPage * (page - 1), numberPage * (page - 1) + numberPage)
+    }
   },
   methods: {
-    doSomething () {
-      console.log(this.items)
+    onPaginate (p) {
+      this.page = p
     }
   },
   mounted () {
-    console.log(this.getPaymentsList)
+
   }
 }
 </script>

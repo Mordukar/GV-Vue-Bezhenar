@@ -1,55 +1,55 @@
 <template>
-    <div>
-        <button @click="prevPage">prev</button>
-        <div v-for="(page, index) in pageCount" :key="index">
-            <button @click="paginated($event.target.innerHTML)">{{ page }}</button>
+    <div :class="[$style.wrapper]">
+        <button @click="onClick(cur - 1)">prev</button>
+        <div
+          :class="{[$style.active] : cur === i}"
+          v-for="i in amount" :key="i" @click="onClick(i)">
+            {{ i }}
         </div>
-        <button @click="nextPage">next</button>
+        <button @click="onClick(cur + 1)">next</button>
     </div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
 
 export default {
   name: 'Pagination',
   data () {
     return {
-      pageNumber: 0,
-      pageSize: 5
     }
+  },
+  props: {
+    length: Number,
+    numberPage: Number,
+    cur: Number
   },
   computed: {
-    ...mapGetters([
-      'getPaymentsListLength'
-    ]),
-    pageCount () {
-      const length = this.getPaymentsListLength
-      const size = this.pageSize
-      return Math.ceil(length / size)
+    amount () {
+      return Math.ceil(this.length / this.numberPage)
     }
-    // paginatedData () {
-    //   const start = this.pageNumber * this.pageSize
-    //   const end = start + this.pageSize
-    //   return this.getPaymentsList.slice(start, end)
-    // }
   },
   methods: {
-    nextPage () {
-      this.pageNumber++
-    },
-    prevPage () {
-      this.pageNumber--
-    },
-    paginated (el) {
-      this.$emit(el)
+    onClick (p) {
+      if (p < 1 || p > this.amount) {
+        return
+      }
+      this.$emit('paginate', p)
     }
   },
   mounted () {
+    console.log(this.length)
   }
 }
 </script>
 
-<style lang="scss">
+<style module lang="scss">
+  .wrapper{
+    display : flex;
+    & div {
+      margin : 0 20px;
+    }
+  }
+  .active{
 
+  }
 </style>
