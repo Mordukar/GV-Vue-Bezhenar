@@ -8,8 +8,9 @@
           <transition name="fade">
             <PaymentForm v-show="isActive" @add="onDataAdded" />
           </transition>
-          <PaymentsList/>
-          <Pagination/>
+<!--          <PaymentsList v-show="currentPage"/>-->
+          <PaymentsList :currentPage="currentPage"/>
+          <Pagination @paginated="paginated"/>
         </main>
   </div>
 </template>
@@ -30,7 +31,8 @@ export default {
   },
   data () {
     return {
-      isActive: false
+      isActive: false,
+      currentPage: 0
     }
   },
   methods: {
@@ -42,6 +44,10 @@ export default {
     },
     openForm () {
       this.isActive = !this.isActive
+    },
+    paginated (el) {
+      console.log(el)
+      this.currentPage = el
     }
   },
   mounted () {

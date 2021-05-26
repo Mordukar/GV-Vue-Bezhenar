@@ -11,7 +11,7 @@
       </thead>
       <tbody>
         <tr v-for="(item, index) in getPaymentsList" :key="index" class="resp-tab">
-          <th>{{ index }}</th>
+          <th>{{ item.id }}</th>
           <th>{{ item.date }}</th>
           <th>{{ item.category}}</th>
           <th>{{ item.price }}</th>
@@ -25,7 +25,8 @@
 import { mapGetters } from 'vuex'
 export default {
   props: {
-    items: Array
+    items: Array,
+    currentPage: Number
   },
   computed: {
     ...mapGetters([

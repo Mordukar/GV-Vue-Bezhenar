@@ -1,8 +1,10 @@
 <template>
     <div>
-        <div v-for="(item, index) in getPaymentsListLenght" :key="index">
-            <div>{{ item }}</div>
+        <button @click="prevPage">prev</button>
+        <div v-for="(page, index) in pageCount" :key="index">
+            <button @click="paginated($event.target.innerHTML)">{{ page }}</button>
         </div>
+        <button @click="nextPage">next</button>
     </div>
 </template>
 
@@ -10,26 +12,26 @@
 import { mapGetters } from 'vuex'
 
 export default {
+  name: 'Pagination',
   data () {
     return {
       pageNumber: 0,
-      pageSize: 10
+      pageSize: 5
     }
   },
-  name: 'Pagination',
   computed: {
     ...mapGetters([
-      'getPaymentsListLenght'
+      'getPaymentsListLength'
     ]),
     pageCount () {
-      const lenght = this.getPaymentsListLenght
+      const length = this.getPaymentsListLength
       const size = this.pageSize
-      return Math.ceil(lenght / size)
+      return Math.ceil(length / size)
     }
     // paginatedData () {
-    //     const start = this.pageNumber * this.pageSize
-    //     const end = start + this.pageSize;
-    //     return this.listData.slice(start, end);
+    //   const start = this.pageNumber * this.pageSize
+    //   const end = start + this.pageSize
+    //   return this.getPaymentsList.slice(start, end)
     // }
   },
   methods: {
@@ -38,10 +40,12 @@ export default {
     },
     prevPage () {
       this.pageNumber--
+    },
+    paginated (el) {
+      this.$emit(el)
     }
   },
   mounted () {
-    console.log(this.getPaymentsListLenght)
   }
 }
 </script>
