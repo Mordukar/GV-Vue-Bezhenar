@@ -17,6 +17,7 @@
 import PaymentsList from './components/PaymentsList'
 import PaymentForm from './components/PaymentForm'
 import Button from './components/Button'
+
 import { mapActions } from 'vuex'
 export default {
   name: 'App',
