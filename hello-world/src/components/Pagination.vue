@@ -1,11 +1,11 @@
 <template>
     <div :class="[$style.wrapper]">
         <button @click="onClick(cur - 1)">prev</button>
-        <div
+        <button
           :class="{[$style.active] : cur === i}"
           v-for="i in amount" :key="i" @click="onClick(i)">
             {{ i }}
-        </div>
+        </button>
         <button @click="onClick(cur + 1)">next</button>
     </div>
 </template>
@@ -44,12 +44,14 @@ export default {
 
 <style module lang="scss">
   .wrapper{
+    margin: 20px 0;
     display : flex;
-    & div {
+    & button {
+      padding : 10px;
       margin : 0 20px;
     }
   }
   .active{
-
+    background-color: gray;
   }
 </style>

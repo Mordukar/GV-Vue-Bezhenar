@@ -40,7 +40,7 @@ export default {
   data () {
     return {
       page: 1,
-      numberPage: 10
+      numberPage: 5
     }
   },
   props: {

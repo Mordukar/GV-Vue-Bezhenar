@@ -26,15 +26,13 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="203ab136-4709-4ccf-b7ae-ec7824a5ea29" name="Default Changelist" comment="Fix Pagination">
+    <list default="true" id="203ab136-4709-4ccf-b7ae-ec7824a5ea29" name="Default Changelist" comment="Finale commit">
+      <change afterPath="$PROJECT_DIR$/hello-world/dist/css/app.d287f3c8.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hello-world/dist/js/app.a9d44703.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hello-world/dist/js/app.a9d44703.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hello-world/dist/js/chunk-vendors.005b0b06.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello-world/dist/css/app.cadb0302.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello-world/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/hello-world/dist/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello-world/dist/js/app.5d48713c.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello-world/dist/js/app.5d48713c.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello-world/dist/js/chunk-vendors.73af16cf.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello-world/dist/js/chunk-vendors.73af16cf.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello-world/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/hello-world/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello-world/dist/js/chunk-vendors.73af16cf.js" beforeDir="false" afterPath="$PROJECT_DIR$/hello-world/dist/js/chunk-vendors.005b0b06.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hello-world/src/components/Pagination.vue" beforeDir="false" afterPath="$PROJECT_DIR$/hello-world/src/components/Pagination.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hello-world/src/components/PaymentsList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/hello-world/src/components/PaymentsList.vue" afterDir="false" />
     </list>
@@ -92,7 +90,8 @@
       <workItem from="1621449029681" duration="1753000" />
       <workItem from="1621939666953" duration="9135000" />
       <workItem from="1622010180451" duration="7572000" />
-      <workItem from="1622038472005" duration="4434000" />
+      <workItem from="1622038472005" duration="4705000" />
+      <workItem from="1622095130687" duration="1833000" />
     </task>
     <task id="LOCAL-00001" summary="Fix">
       <created>1620313466968</created>
@@ -129,7 +128,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622017773745</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Finale commit">
+      <created>1622043420032</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1622043420032</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -162,10 +168,10 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Fix" />
     <MESSAGE value="Fix operators" />
-    <MESSAGE value="Finale commit" />
     <MESSAGE value="Add Vuex in components" />
     <MESSAGE value="Fix Pagination" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix Pagination" />
+    <MESSAGE value="Finale commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finale commit" />
   </component>
   <component name="WindowStateProjectService">
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1620994162099">
@@ -180,10 +186,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="350" y="163" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1620369379000" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1622017779629">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1622043424337">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1622017779629" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1622043424337" />
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1622010281754">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
