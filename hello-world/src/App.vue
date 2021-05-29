@@ -2,48 +2,25 @@
   <div id="app">
         <header >
           <h1 class="header">My personal costs</h1>
+          <router-link to="/dashboard">Dashboard</router-link>
+          <router-link to="/about">About</router-link>
+          <router-link to="/404">404</router-link>
         </header>
         <main>
-          <Button @openForm="openForm"/>
-          <transition name="fade">
-            <PaymentForm v-show="isActive" @add="onDataAdded" />
-          </transition>
-          <PaymentsList/>
+          <router-view />
         </main>
   </div>
 </template>
 
 <script>
-import PaymentsList from './components/PaymentsList'
-import PaymentForm from './components/PaymentForm'
-import Button from './components/Button'
 
-import { mapActions } from 'vuex'
 export default {
   name: 'App',
   components: {
-    PaymentsList,
-    PaymentForm,
-    Button
   },
   data () {
     return {
-      isActive: false
     }
-  },
-  methods: {
-    ...mapActions([
-      'fetchData'
-    ]),
-    onDataAdded (data) {
-      this.paymentsList.push(data)
-    },
-    openForm () {
-      this.isActive = !this.isActive
-    }
-  },
-  mounted () {
-    this.fetchData()
   }
 }
 </script>
