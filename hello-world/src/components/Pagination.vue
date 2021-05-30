@@ -1,12 +1,12 @@
 <template>
     <div :class="[$style.wrapper]">
-        <button @click="onClick(cur - 1)">prev</button>
-        <button
+        <router-link :to="{ name: 'dashboardPage', params: { page: this.cur - 1}}">prev</router-link>
+        <router-link :to="{ name: 'dashboardPage', params: { page: i}}"
           :class="{[$style.active] : cur === i}"
-          v-for="i in amount" :key="i" @click="onClick(i)">
+          v-for="i in amount" :key="i">
             {{ i }}
-        </button>
-        <button @click="onClick(cur + 1)">next</button>
+        </router-link>
+        <router-link :to="{ name: 'dashboardPage', params: { page: this.cur + 1}}">next</router-link>
     </div>
 </template>
 
@@ -29,15 +29,10 @@ export default {
     }
   },
   methods: {
-    onClick (p) {
-      if (p < 1 || p > this.amount) {
-        return
-      }
-      this.$emit('paginate', p)
-    }
+
   },
   mounted () {
-    console.log(this.length)
+
   }
 }
 </script>

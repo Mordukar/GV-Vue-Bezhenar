@@ -2,7 +2,7 @@
   <div id="app">
         <header >
           <h1 class="header">My personal costs</h1>
-          <router-link to="/dashboard">Dashboard</router-link>
+          <router-link to="/dashboard/1">Dashboard</router-link>
           <router-link to="/about">About</router-link>
           <router-link to="/404">404</router-link>
         </header>

@@ -11,7 +11,7 @@ export default new Router({
   routes: [
     {
       path: '/dashboard/:page',
-      name: 'dashboard',
+      name: 'dashboardPage',
       component: PageDashboard
     },
     {

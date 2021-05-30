@@ -24,7 +24,6 @@
       :length="getPaymentsList.length"
       :numberPage="numberPage"
       :cur="page"
-      @paginate="onPaginate"
     />
   </div>
 </template>
@@ -57,12 +56,15 @@ export default {
     }
   },
   methods: {
-    onPaginate (p) {
-      this.page = p
+
+  },
+  watch: {
+    '$route.path': function () {
+      this.page = +this.$route.params.page
     }
   },
   mounted () {
-
+    this.page = +this.$route.params.page
   }
 }
 </script>
