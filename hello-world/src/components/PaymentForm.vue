@@ -26,17 +26,20 @@ export default {
     save () {
       const { date, category, price } = this
       this.setNewPaymentsListData({ date, category, price })
+    },
+    checkForNumber () {
+      this.price = Number.isNaN(Number(this.$route.query.value)) ? 0 : Number(this.$route.query.value)
     }
   },
   mounted () {
     this.date = new Date().toLocaleDateString()
     this.category = this.$route.params.category
-    this.price = Number.isInteger(Number(this.$route.query.value)) ? Number(this.$route.query.value) : 0
+    this.checkForNumber()
   },
   watch: {
     '$route.path': function () {
       this.category = this.$route.params.category
-      this.price = Number.isInteger(Number(this.$route.query.value)) ? Number(this.$route.query.value) : 0
+      this.checkForNumber()
     }
   }
 }
