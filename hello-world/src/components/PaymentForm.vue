@@ -31,12 +31,12 @@ export default {
   mounted () {
     this.date = new Date().toLocaleDateString()
     this.category = this.$route.params.category
-    this.price = Number(this.$route.query.value)
+    this.price = Number.isInteger(Number(this.$route.query.value)) ? Number(this.$route.query.value) : 0
   },
   watch: {
     '$route.path': function () {
       this.category = this.$route.params.category
-      this.price = Number(this.$route.query.value)
+      this.price = Number.isInteger(Number(this.$route.query.value)) ? Number(this.$route.query.value) : 0
     }
   }
 }
