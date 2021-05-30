@@ -1,6 +1,17 @@
 <template>
   <div>
     <Button @openForm="openForm"/>
+    <div class="wrapper">
+      <div @click="isActive = true">
+      <router-link :to="{ path: '/add/payment/Food?value=200'}">Food 200</router-link>
+    </div>
+    <div @click="isActive = true">
+      <router-link :to="{ path: '/add/payment/Transport?value=50'}">Transport 50</router-link>
+    </div>
+    <div @click="isActive = true">
+      <router-link :to="{ path: '/add/payment/Entertainment?value=2000'}">Entertainment 2000</router-link>
+    </div>
+    </div>
     <transition name="fade">
       <PaymentForm v-show="isActive" @add="onDataAdded" />
     </transition>
@@ -42,6 +53,9 @@ export default {
 </script>
 
 <style lang='scss'>
+  .wrapper{
+    margin: 20px 0;
+  }
   #app{
       max-width : 90%;
       margin : 0 auto;

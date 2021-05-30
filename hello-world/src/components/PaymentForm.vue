@@ -19,9 +19,6 @@ export default {
       price: 0
     }
   },
-  props: {
-    items: Array
-  },
   methods: {
     ...mapMutations([
       'setNewPaymentsListData'
@@ -29,6 +26,17 @@ export default {
     save () {
       const { date, category, price } = this
       this.setNewPaymentsListData({ date, category, price })
+    }
+  },
+  mounted () {
+    this.date = new Date().toLocaleDateString()
+    this.category = this.$route.params.category
+    this.price = Number(this.$route.query.value)
+  },
+  watch: {
+    '$route.path': function () {
+      this.category = this.$route.params.category
+      this.price = Number(this.$route.query.value)
     }
   }
 }

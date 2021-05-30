@@ -15,6 +15,16 @@ export default new Router({
       component: PageDashboard
     },
     {
+      path: '/add/payment/:category',
+      name: 'addPaymentPreset',
+      component: PageDashboard
+    },
+    {
+      path: '/add/payment*',
+      name: 'addPaymentManual',
+      component: PageDashboard
+    },
+    {
       path: '/about',
       name: 'about',
       component: PageAbout

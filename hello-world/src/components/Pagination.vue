@@ -41,7 +41,7 @@ export default {
   .wrapper{
     margin: 20px 0;
     display : flex;
-    & button {
+    & a {
       padding : 10px;
       margin : 0 20px;
     }

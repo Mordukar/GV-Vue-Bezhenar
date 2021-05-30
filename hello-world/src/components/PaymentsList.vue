@@ -12,7 +12,7 @@
         </thead>
         <tbody>
           <tr v-for="(item, index) in currentElements" :key="index" class="resp-tab">
-            <th>{{ item.id }}</th>
+            <th>{{ index }}</th>
             <th>{{ item.date }}</th>
             <th>{{ item.category}}</th>
             <th>{{ item.price }}</th>

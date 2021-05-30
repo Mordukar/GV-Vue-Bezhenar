@@ -2,9 +2,11 @@
   <div id="app">
         <header >
           <h1 class="header">My personal costs</h1>
-          <router-link to="/dashboard/1">Dashboard</router-link>
-          <router-link to="/about">About</router-link>
-          <router-link to="/404">404</router-link>
+          <div class="wrapper">
+            <router-link class="link" to="/dashboard/1">Dashboard</router-link>
+            <router-link class="link" to="/about">About</router-link>
+            <router-link class="link" to="/404">404</router-link>
+          </div>
         </header>
         <main>
           <router-view />
@@ -39,11 +41,18 @@ export default {
     transition-duration: .3s;
     transition-timing-function: ease;
   }
+  .wrapper{
+    margin: 30px 0;
+  }
   .fade-enter, .fade-leave-to /* .fade-leave-active до версии 2.1.8 */ {
     opacity: 0;
     overflow: hidden;
     max-height : 0;
     margin: 0;
     padding: 0;
+  }
+  .link{
+    display: inline-block;
+    margin-right: 20px;
   }
 </style>
