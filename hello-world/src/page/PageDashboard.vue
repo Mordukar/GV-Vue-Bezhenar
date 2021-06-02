@@ -13,7 +13,8 @@
     </div>
     </div>
     <transition name="fade">
-      <PaymentForm v-show="isActive" @add="onDataAdded" />
+      <Modal v-if="isActive" modal='paymentform'/>
+      <!-- <PaymentForm v-show="isActive" @add="onDataAdded" /> -->
     </transition>
     <PaymentsList />
   </div>
@@ -21,14 +22,16 @@
 
 <script>
 import { mapActions } from 'vuex'
-import PaymentForm from '../components/PaymentForm'
+import Modal from '../components/modalwindows/Modal'
+// import PaymentForm from '../components/PaymentForm'
 import PaymentsList from '../components/PaymentsList'
-import Button from '../components/Button'
+
 export default {
   components: {
-    PaymentForm,
-    PaymentsList,
-    Button
+    Modal,
+    // PaymentForm,
+    PaymentsList
+    // Button
   },
   data () {
     return {
