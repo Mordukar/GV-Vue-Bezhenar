@@ -19,30 +19,13 @@
     <select>
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:origin/lesson1" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:lesson5" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="203ab136-4709-4ccf-b7ae-ec7824a5ea29" name="Default Changelist" comment="Added styles and fix scripts">
-      <change beforePath="$PROJECT_DIR$/.idea/GB-Vue-Bezhenar.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello-world/dist/css/app.d287f3c8.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello-world/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/hello-world/dist/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello-world/dist/js/app.a9d44703.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello-world/dist/js/app.a9d44703.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello-world/dist/js/chunk-vendors.005b0b06.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello-world/dist/js/chunk-vendors.005b0b06.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello-world/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/hello-world/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello-world/src/page/Page404.vue" beforeDir="false" afterPath="$PROJECT_DIR$/hello-world/src/page/Page404.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello-world/src/page/PageAbout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/hello-world/src/page/PageAbout.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello-world/src/page/PageDashboard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/hello-world/src/page/PageDashboard.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello-world/src/router/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/hello-world/src/router/router.js" afterDir="false" />
-    </list>
+    <list default="true" id="203ab136-4709-4ccf-b7ae-ec7824a5ea29" name="Default Changelist" comment="Added styles and fix scripts" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -68,7 +51,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../malibu" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -98,6 +81,7 @@
       <workItem from="1622310167933" duration="243000" />
       <workItem from="1622310425443" duration="1263000" />
       <workItem from="1622312721967" duration="639000" />
+      <workItem from="1622727224015" duration="23000" />
     </task>
     <task id="LOCAL-00001" summary="Fix">
       <created>1620313466968</created>
@@ -137,7 +121,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/lesson5" />
+                        <option value="lesson5" />
                       </list>
                     </value>
                   </entry>
@@ -155,6 +139,12 @@
     <MESSAGE value="Fix operators" />
     <MESSAGE value="Added styles and fix scripts" />
     <option name="LAST_COMMIT_MESSAGE" value="Added styles and fix scripts" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1622727247997">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1622727247997" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

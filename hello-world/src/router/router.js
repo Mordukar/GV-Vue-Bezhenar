@@ -1,10 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import PageAbout from '../page/PageAbout'
-import PageDashboard from '../page/PageDashboard'
-import Page404 from '../page/Page404'
-
 Vue.use(Router)
 export default new Router({
   mode: 'history',
@@ -12,27 +8,27 @@ export default new Router({
     {
       path: '/dashboard/:page',
       name: 'dashboardPage',
-      component: PageDashboard
+      component: () => import('../page/PageDashboard')
     },
     {
       path: '/add/payment/:category',
       name: 'addPaymentPreset',
-      component: PageDashboard
+      component: () => import('../page/PageDashboard')
     },
     {
       path: '/add/payment*',
       name: 'addPaymentManual',
-      component: PageDashboard
+      component: () => import('../page/PageDashboard')
     },
     {
       path: '/about',
       name: 'about',
-      component: PageAbout
+      component: () => import('../page/PageAbout')
     },
     {
       path: '*',
       name: 'NotFound',
-      component: Page404
+      component: () => import('../page/Page404')
     }
   ]
 })

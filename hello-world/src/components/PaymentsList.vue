@@ -25,6 +25,7 @@
       :numberPage="numberPage"
       :cur="page"
     />
+    <button @click="showPaymentsForm">Show Payments List Form</button>
   </div>
 </template>
 
@@ -56,7 +57,9 @@ export default {
     }
   },
   methods: {
-
+    showPaymentsForm () {
+      this.$modal.show('PaymentForm')
+    }
   },
   watch: {
     '$route.path': function () {

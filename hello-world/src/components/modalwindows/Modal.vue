@@ -1,9 +1,11 @@
 <template>
     <div :class="[$style.wrapper]">
-        <div class="overlay"></div>
-        <header>Name</header>
-        <PaymentForm v-if="modal === 'paymentform'"/>
+      <div :class="[$style.overlay]"></div>
+      <div :class="[$style.content]">
+        <header>{{ name }}</header>
+        <PaymentForm v-if="name === 'PaymentForm'"/>
         <button @click="onClose">Close</button>
+      </div>
     </div>
 </template>
 
@@ -16,15 +18,30 @@ export default {
     PaymentForm
     // Button
   },
+  data () {
+    return {
+    }
+  },
   props: {
-    modal: String
+    name: String
+  },
+  methods: {
+    onClose () {
+      this.$modal.close()
+    }
+  },
+  mounted () {
   }
 
 }
 </script>
 
-<style module>
-    .wrapper{
-        border: 1px solid black;
+<style module lang="scss">
+    .wrapper {
+      border: 1px solid black;
+      position: relative;
+      .overlay {
+        position : absolute;
+      }
     }
 </style>
