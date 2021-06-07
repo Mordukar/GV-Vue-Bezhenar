@@ -14,6 +14,7 @@ import { mapMutations } from 'vuex'
 export default {
   data () {
     return {
+      id: 0,
       date: '',
       category: '',
       price: 0
@@ -24,8 +25,8 @@ export default {
       'setNewPaymentsListData'
     ]),
     save () {
-      const { date, category, price } = this
-      this.setNewPaymentsListData({ date, category, price })
+      const { id, date, category, price } = this
+      this.setNewPaymentsListData({ id, date, category, price })
     },
     checkForNumber () {
       this.price = Number.isNaN(Number(this.$route.query.value)) ? 0 : Number(this.$route.query.value)

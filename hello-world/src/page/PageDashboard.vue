@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Button @openForm="openForm"/>
     <div class="wrapper">
       <div @click="isActive = true">
         <router-link :to="{ path: '/add/payment/Food?value=200'}">Food 200</router-link>
@@ -18,14 +17,11 @@
 
 <script>
 import { mapActions } from 'vuex'
-// import PaymentForm from '../components/PaymentForm'
 import PaymentsList from '../components/PaymentsList'
 
 export default {
   components: {
-    // PaymentForm,
     PaymentsList
-    // Button
   },
   data () {
     return {

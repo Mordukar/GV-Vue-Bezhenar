@@ -11,11 +11,12 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(item, index) in currentElements" :key="index" class="resp-tab">
-            <th>{{ index }}</th>
+          <tr v-for="item in currentElements" :key="item.id" class="resp-tab">
+            <th>{{ item.id }}</th>
             <th>{{ item.date }}</th>
             <th>{{ item.category}}</th>
             <th>{{ item.price }}</th>
+            <ContextMenu @onEdit="onEdit" @onDelete="onDelete(item.id)"/>
           </tr>
         </tbody>
       </table>
@@ -32,9 +33,11 @@
 <script>
 import Pagination from './Pagination'
 import { mapGetters } from 'vuex'
+import ContextMenu from '@/components/context-menu/ContextMenu'
 export default {
   name: 'PaymentsList',
   components: {
+    ContextMenu,
     Pagination
   },
   data () {
@@ -59,6 +62,13 @@ export default {
   methods: {
     showPaymentsForm () {
       this.$modal.show('PaymentForm')
+    },
+    onEdit () {
+      console.log('Редактировать')
+      this.$modal.show('PaymentForm')
+    },
+    onDelete (id) {
+      console.log(id)
     }
   },
   watch: {
@@ -68,6 +78,12 @@ export default {
   },
   mounted () {
     this.page = +this.$route.params.page
+    this.$contextMenu.EventBus.$on('edit', this.onEdit)
+    this.$contextMenu.EventBus.$on('delete', this.onDelete)
+  },
+  beforeDestroy () {
+    this.$contextMenu.EventBus.$off('edit', this.onEdit)
+    this.$contextMenu.EventBus.$off('delete', this.onDelete)
   }
 }
 </script>

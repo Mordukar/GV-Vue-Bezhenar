@@ -10,13 +10,11 @@
 </template>
 
 <script>
-// import Button from '../Button'
 import PaymentForm from '../PaymentForm'
 export default {
   name: 'Modal',
   components: {
     PaymentForm
-    // Button
   },
   data () {
     return {

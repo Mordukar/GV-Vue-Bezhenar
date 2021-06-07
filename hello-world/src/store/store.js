@@ -13,6 +13,8 @@ export default new Vuex.Store({
     },
     setNewPaymentsListData (state, payload) {
       state.paymentsList.push(payload)
+    },
+    deletePaymentsList (state, id) {
     }
   },
   getters: {
@@ -25,61 +27,73 @@ export default new Vuex.Store({
         setTimeout(() => {
           resolve([
             {
+              id: 1,
               date: '13.05.2021',
               category: 'Education',
               price: 123
             },
             {
+              id: 2,
               date: '12.05.2021',
               category: 'Education',
               price: 456
             },
             {
+              id: 3,
               date: '11.05.2021',
               category: 'Education',
               price: 789
             },
             {
+              id: 4,
               date: '10.05.2021',
               category: 'Education',
               price: 0
             },
             {
+              id: 5,
               date: '13.05.2021',
               category: 'Education',
               price: 123
             },
             {
+              id: 6,
               date: '12.05.2021',
               category: 'Education',
               price: 456
             },
             {
+              id: 7,
               date: '11.05.2021',
               category: 'Education',
               price: 789
             },
             {
+              id: 8,
               date: '10.05.2021',
               category: 'Education',
               price: 0
             },
             {
+              id: 9,
               date: '13.05.2021',
               category: 'Education',
               price: 123
             },
             {
+              id: 10,
               date: '12.05.2021',
               category: 'Education',
               price: 456
             },
             {
+              id: 11,
               date: '11.05.2021',
               category: 'Education',
               price: 789
             },
             {
+              id: 12,
               date: '10.05.2021',
               category: 'Education',
               price: 0
