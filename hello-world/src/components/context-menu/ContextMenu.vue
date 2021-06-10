@@ -28,9 +28,10 @@ export default {
     toogleMenu () {
       this.statusMenu = !this.statusMenu
     },
-    onEdit () {
+    async onEdit () {
       this.$modal.show('PaymentForm')
-      this.$modal.edit(this.item)
+      await this.$nextTick()
+      this.$contextMenu.edit(this.item)
     },
     onDelete (index) {
       this.deletePaymentsList(index)

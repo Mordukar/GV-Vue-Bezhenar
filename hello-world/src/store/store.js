@@ -16,6 +16,10 @@ export default new Vuex.Store({
     },
     deletePaymentsList (state, index) {
       state.paymentsList.splice(index, 1)
+    },
+    editPaymentsListData (state, newItem) {
+      const index = state.paymentsList.findIndex(item => item.id === newItem.id)
+      state.paymentsList = [...state.paymentsList.slice(0, index), newItem, ...state.paymentsList.slice(index + 1)]
     }
   },
   getters: {

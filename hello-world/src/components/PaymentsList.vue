@@ -71,12 +71,8 @@ export default {
   },
   mounted () {
     this.page = +this.$route.params.page
-    this.$contextMenu.EventBus.$on('edit', this.onEdit)
-    this.$contextMenu.EventBus.$on('delete', this.onDelete)
   },
   beforeDestroy () {
-    this.$contextMenu.EventBus.$off('edit', this.onEdit)
-    this.$contextMenu.EventBus.$off('delete', this.onDelete)
   }
 }
 </script>

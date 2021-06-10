@@ -22,26 +22,42 @@ export default {
   },
   methods: {
     ...mapMutations([
-      'setNewPaymentsListData'
+      'setNewPaymentsListData',
+      'editPaymentsListData'
     ]),
     save () {
       const { id, date, category, price } = this
-      this.setNewPaymentsListData({ id, date, category, price })
+      if (id) {
+        this.editPaymentsListData({ id, date, category, price })
+      } else {
+        this.setNewPaymentsListData({ id, date, category, price })
+      }
     },
     checkForNumber () {
       this.price = Number.isNaN(Number(this.$route.query.value)) ? 0 : Number(this.$route.query.value)
+    },
+    onEdit (item) {
+      console.log(item)
+      this.date = item.date
+      this.category = item.category
+      this.price = item.price
+      this.id = item.id
     }
   },
   mounted () {
     this.date = new Date().toLocaleDateString()
     this.category = this.$route.params.category
     this.checkForNumber()
+    this.$contextMenu.EventBus.$on('edit', this.onEdit)
   },
   watch: {
     '$route.path': function () {
       this.category = this.$route.params.category
       this.checkForNumber()
     }
+  },
+  beforeDestroy () {
+    this.$modal.EventBus.$off('edit', this.onEdit)
   }
 }
 </script>

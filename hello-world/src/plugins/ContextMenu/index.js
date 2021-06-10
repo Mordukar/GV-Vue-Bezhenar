@@ -9,8 +9,8 @@ export default {
     Vue.prototype.$contextMenu = {
       EventBus: new Vue(),
 
-      edit (name, settings) {
-        this.EventBus.$emit('show', { name, settings })
+      edit (settings) {
+        this.EventBus.$emit('edit', settings)
       },
 
       delete () {
