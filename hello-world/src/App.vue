@@ -36,15 +36,19 @@ export default {
     },
     onClose () {
       this.modalShown = ''
+    },
+    onEdit ({ settings }) {
     }
   },
   mounted () {
     this.$modal.EventBus.$on('show', this.onShow)
     this.$modal.EventBus.$on('close', this.onClose)
+    this.$modal.EventBus.$on('edit', this.onEdit)
   },
   beforeDestroy () {
     this.$modal.EventBus.$off('show', this.onShow)
     this.$modal.EventBus.$off('close', this.onClose)
+    this.$modal.EventBus.$off('edit', this.onEdit)
   }
 }
 </script>

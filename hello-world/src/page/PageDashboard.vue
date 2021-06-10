@@ -1,13 +1,13 @@
 <template>
   <div>
     <div class="wrapper">
-      <div @click="isActive = true">
+      <div @click="openForm()">
         <router-link :to="{ path: '/add/payment/Food?value=200'}">Food 200</router-link>
       </div>
-      <div @click="isActive = true">
+      <div @click="openForm()">
         <router-link :to="{ path: '/add/payment/Transport?value=50'}">Transport 50</router-link>
       </div>
-      <div @click="isActive = true">
+      <div @click="openForm()">
         <router-link :to="{ path: '/add/payment/Entertainment?value=2000'}">Entertainment 2000</router-link>
       </div>
     </div>
@@ -36,7 +36,7 @@ export default {
       this.paymentsList.push(data)
     },
     openForm () {
-      this.isActive = !this.isActive
+      this.$modal.show('PaymentForm')
     }
   },
   mounted () {

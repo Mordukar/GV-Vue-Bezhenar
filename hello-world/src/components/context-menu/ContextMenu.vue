@@ -9,7 +9,7 @@
 </template>
 
 <script>
-
+import { mapMutations } from 'vuex'
 export default {
   name: 'ContextMenu',
   data () {
@@ -18,17 +18,22 @@ export default {
     }
   },
   props: {
-    name: String
+    name: String,
+    item: Object
   },
   methods: {
+    ...mapMutations([
+      'deletePaymentsList'
+    ]),
     toogleMenu () {
       this.statusMenu = !this.statusMenu
     },
     onEdit () {
-      this.$emit('onEdit')
+      this.$modal.show('PaymentForm')
+      this.$modal.edit(this.item)
     },
-    onDelete () {
-      this.$emit('onDelete')
+    onDelete (index) {
+      this.deletePaymentsList(index)
     }
   }
 }

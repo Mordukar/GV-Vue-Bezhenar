@@ -11,12 +11,12 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="item in currentElements" :key="item.id" class="resp-tab">
+          <tr v-for="(item, index) in currentElements" :key="index" class="resp-tab">
             <th>{{ item.id }}</th>
             <th>{{ item.date }}</th>
             <th>{{ item.category}}</th>
             <th>{{ item.price }}</th>
-            <ContextMenu @onEdit="onEdit" @onDelete="onDelete(item.id)"/>
+            <ContextMenu :item='item'/>
           </tr>
         </tbody>
       </table>
@@ -62,13 +62,6 @@ export default {
   methods: {
     showPaymentsForm () {
       this.$modal.show('PaymentForm')
-    },
-    onEdit () {
-      console.log('Редактировать')
-      this.$modal.show('PaymentForm')
-    },
-    onDelete (id) {
-      console.log(id)
     }
   },
   watch: {

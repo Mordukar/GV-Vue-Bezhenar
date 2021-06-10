@@ -14,7 +14,8 @@ export default new Vuex.Store({
     setNewPaymentsListData (state, payload) {
       state.paymentsList.push(payload)
     },
-    deletePaymentsList (state, id) {
+    deletePaymentsList (state, index) {
+      state.paymentsList.splice(index, 1)
     }
   },
   getters: {

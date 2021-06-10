@@ -15,6 +15,10 @@ export default {
 
       close () {
         this.EventBus.$emit('close')
+      },
+
+      edit (settings) {
+        this.EventBus.$emit('edit', { settings })
       }
     }
   }
