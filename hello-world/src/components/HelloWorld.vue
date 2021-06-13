@@ -1,14 +1,14 @@
 <template>
   <div class="hello">
-    <input v-model.number="operand1" ref="operand1"/>
-    <input v-model.number="operand2" ref="operand2"/>
+    <input name="operand1" v-model.number="operand1" ref="operand1"/>
+    <input name="operand2" v-model.number="operand2" ref="operand2"/>
     = {{ result }}
     <div>
-      <button @click="calculate('+')">+</button>
-      <button @click="calculate('-')">-</button>
-      <button @click="calculate('*')">*</button>
-      <button @click="calculate('/')">/</button>
-      <button @click="calculate('^')">^</button>
+      <button name="+" @click="calculate('+')">+</button>
+      <button name="-" @click="calculate('-')">-</button>
+      <button name="*" @click="calculate('*')">*</button>
+      <button name="/" @click="calculate('/')">/</button>
+      <button name="^" @click="calculate('^')">^</button>
     </div>
     <div>
     <input type="checkbox" id="checkbox" v-model="checked">
