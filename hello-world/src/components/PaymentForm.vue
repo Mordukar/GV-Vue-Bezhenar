@@ -37,7 +37,6 @@ export default {
       this.price = Number.isNaN(Number(this.$route.query.value)) ? 0 : Number(this.$route.query.value)
     },
     onEdit (item) {
-      console.log(item)
       this.date = item.date
       this.category = item.category
       this.price = item.price
@@ -73,6 +72,9 @@ export default {
     &__item{
       padding: 5px;
       margin-right : 20px;
+      border: 1px black solid;
+      border-radius: 10px;
+      outline: none;
     }
     &__button{
       display : block;

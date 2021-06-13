@@ -47,6 +47,6 @@ export default {
     }
   }
   .active{
-    background-color: gray;
+    background-color: lightgrey;
   }
 </style>

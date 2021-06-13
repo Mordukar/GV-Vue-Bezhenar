@@ -16,7 +16,7 @@
             <th>{{ item.date }}</th>
             <th>{{ item.category}}</th>
             <th>{{ item.price }}</th>
-            <ContextMenu :item='item'/>
+            <ContextMenu :index='index' :item='item'/>
           </tr>
         </tbody>
       </table>
@@ -71,8 +71,6 @@ export default {
   },
   mounted () {
     this.page = +this.$route.params.page
-  },
-  beforeDestroy () {
   }
 }
 </script>
@@ -99,9 +97,6 @@ export default {
   border: 1px solid #1a4a73;
   text-transform: uppercase;
   text-align: center;
-}
-.resp-tab tr:nth-child(even) {
-  background: #edf7ff;
 }
 .resp-tab td span {
   background: #337AB7;

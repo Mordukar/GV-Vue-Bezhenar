@@ -1,19 +1,21 @@
 <template>
   <div id="app">
-    <transition name="fade">
-      <Modal v-if="modalShown" name="PaymentForm"/>
-    </transition>
-    <header >
-      <h1 class="header">My personal costs</h1>
-      <div class="wrapper">
-        <router-link class="link" to="/dashboard/1">Dashboard</router-link>
-        <router-link class="link" to="/about">About</router-link>
-        <router-link class="link" to="/404">404</router-link>
-      </div>
-    </header>
-    <main>
-      <router-view />
-    </main>
+    <div class="container">
+      <transition name="fade">
+        <Modal class="modal" v-if="modalShown" name="PaymentForm"/>
+      </transition>
+      <header >
+        <h1 class="header">My personal costs</h1>
+        <div class="wrapper">
+          <router-link class="link" to="/dashboard/1">Dashboard</router-link>
+          <router-link class="link" to="/about">About</router-link>
+          <router-link class="link" to="/404">404</router-link>
+        </div>
+      </header>
+      <main>
+        <router-view />
+      </main>
+    </div>
   </div>
 </template>
 
@@ -53,15 +55,23 @@ export default {
 
 <style lang="scss">
   #app{
-    max-width : 90%;
-    margin : 0 auto;
+    position: relative;
+  }
+  .container {
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+    max-width: 1200px;
+  }
+  .modal{
+    z-index: 10;
   }
   .header {
     font-size : 56px;
     text-align : left;
   }
   .fade-enter-active, .fade-leave-active {
-    transition: opacity 1s;
+    transition: all .5s;
   }
   .wrapper{
     margin: 30px 0;
