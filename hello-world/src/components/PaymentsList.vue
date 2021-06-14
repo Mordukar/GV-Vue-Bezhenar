@@ -1,49 +1,40 @@
 <template>
   <div>
+    <!-- <v-btn
+      color="teal"
+      dark
+      @click="showPaymentsForm"
+      >
+        ADD PAYMENT
+      <v-icon>mdi-plus</v-icon>
+    </v-btn> -->
     <transition name="fadeItem">
-      <table class="resp-tab">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Date</th>
-            <th>Category</th>
-            <th>Value</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="(item, index) in currentElements" :key="index" class="resp-tab">
-            <th>{{ item.id }}</th>
-            <th>{{ item.date }}</th>
-            <th>{{ item.category}}</th>
-            <th>{{ item.price }}</th>
-            <ContextMenu :index='index' :item='item'/>
-          </tr>
-        </tbody>
-      </table>
+      <v-data-table
+      :headers="tableHeaders"
+      :items="listWithIndex"
+      >
+      </v-data-table>
     </transition>
-    <Pagination
-      :length="getPaymentsList.length"
-      :numberPage="numberPage"
-      :cur="page"
-    />
-    <button @click="showPaymentsForm">Show Payments List Form</button>
   </div>
 </template>
 
 <script>
-import Pagination from './Pagination'
 import { mapGetters } from 'vuex'
-import ContextMenu from '@/components/context-menu/ContextMenu'
+// import ContextMenu from '@/components/context-menu/ContextMenu'
 export default {
   name: 'PaymentsList',
   components: {
-    ContextMenu,
-    Pagination
   },
   data () {
     return {
       page: 1,
-      numberPage: 5
+      numberPage: 5,
+      tableHeaders: [
+        { text: '#', value: 'index' },
+        { text: 'Date', value: 'date' },
+        { text: 'Category', value: 'category' },
+        { text: 'Value', value: 'price' }
+      ]
     }
   },
   props: {
@@ -54,6 +45,12 @@ export default {
     ...mapGetters([
       'getPaymentsList'
     ]),
+    listWithIndex () {
+      return this.getPaymentsList.map((obj, i) => {
+        obj.index = i + 1
+        return obj
+      })
+    },
     currentElements () {
       const { page, numberPage } = this
       return this.getPaymentsList.slice(numberPage * (page - 1), numberPage * (page - 1) + numberPage)

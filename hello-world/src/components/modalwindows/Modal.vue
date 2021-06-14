@@ -1,12 +1,23 @@
 <template>
-    <div :class="[$style.wrapper]">
-      <div :class="[$style.overlay]"></div>
-      <div :class="[$style.content]">
-        <header>{{ name }}</header>
+  <div>
+    <v-dialog
+      v-model="pfs"
+    >
+      <template v-slot:activator="{ on }">
+        <v-btn
+        color="teal"
+        dark
+        v-on="on"
+        >
+          ADD PAYMENT
+          <v-icon>mdi-plus</v-icon>
+        </v-btn>
+      </template>
+      <v-card>
         <PaymentForm v-if="name === 'PaymentForm'"/>
-        <button :class="[$style.close]" @click="onClose">X</button>
-      </div>
-    </div>
+      </v-card>
+    </v-dialog>
+  </div>
 </template>
 
 <script>
@@ -18,6 +29,7 @@ export default {
   },
   data () {
     return {
+      pfs: false
     }
   },
   props: {

@@ -1,27 +1,38 @@
 <template>
   <div>
-    <div class="wrapper">
-      <div @click="openForm()">
+    <div class="text-h5 text-md-h3 my-6">My Personal Costs</div>
+    <v-row>
+      <v-btn @click="openForm()">
         <router-link :to="{ path: '/add/payment/Food?value=200'}">Food 200</router-link>
-      </div>
-      <div @click="openForm()">
+      </v-btn>
+      <v-btn @click="openForm()">
         <router-link :to="{ path: '/add/payment/Transport?value=50'}">Transport 50</router-link>
-      </div>
-      <div @click="openForm()">
+      </v-btn>
+      <v-btn @click="openForm()">
         <router-link :to="{ path: '/add/payment/Entertainment?value=2000'}">Entertainment 2000</router-link>
-      </div>
-    </div>
-    <PaymentsList />
+      </v-btn>
+    </v-row>
+    <v-row>
+      <v-col>
+        <transition name="fade">
+          <Modal name="PaymentForm"/>
+        </transition>
+        <PaymentsList />
+      </v-col>
+      <v-col>DIAGRAM</v-col>
+    </v-row>
   </div>
 </template>
 
 <script>
 import { mapActions } from 'vuex'
 import PaymentsList from '../components/PaymentsList'
+import Modal from '../components/modalwindows/Modal'
 
 export default {
   components: {
-    PaymentsList
+    PaymentsList,
+    Modal
   },
   data () {
     return {
@@ -46,15 +57,4 @@ export default {
 </script>
 
 <style lang='scss'>
-  .wrapper{
-    margin: 20px 0;
-  }
-  #app{
-      max-width : 90%;
-      margin : 0 auto;
-    }
-    .header {
-      font-size : 56px;
-      text-align : left;
-    }
 </style>

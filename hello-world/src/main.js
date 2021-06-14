@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
+import vuetify from './plugins/Vuetify'
 
 import store from './store/store'
 import router from './router/router'
@@ -13,5 +14,6 @@ Vue.use(contextMenu)
 new Vue({
   render: h => h(App),
   store,
-  router
+  router,
+  vuetify
 }).$mount('#app')

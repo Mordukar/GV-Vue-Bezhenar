@@ -1,8 +1,27 @@
 <template>
   <div class="form">
-    <input class="form__item" placeholder="Date" v-model="date" />
-    <input class="form__item" placeholder="Category" v-model="category" />
-    <input class="form__item" placeholder="Price" v-model.number="price" />
+    <v-text-field
+    @focus="shown = true"
+    v-model="date"
+    >
+    </v-text-field>
+    <v-date-picker
+    v-show="shown"
+    v-model="date"
+    >
+    </v-date-picker>
+    <v-text-field
+    v-model="category"
+    label="Category"
+    required
+    >
+    </v-text-field>
+    <v-text-field
+    v-model.number="price"
+    label="Value"
+    required
+    >
+    </v-text-field>
     <button class="form__button" @click="save">Save</button>
   </div>
 </template>
@@ -17,7 +36,17 @@ export default {
       id: 0,
       date: '',
       category: '',
-      price: 0
+      price: 0,
+      shown: false
+    }
+  },
+  watch: {
+    date () {
+      this.shown = false
+    },
+    '$route.path': function () {
+      this.category = this.$route.params.category
+      this.checkForNumber()
     }
   },
   methods: {
@@ -49,12 +78,6 @@ export default {
     this.checkForNumber()
     this.$contextMenu.EventBus.$on('edit', this.onEdit)
   },
-  watch: {
-    '$route.path': function () {
-      this.category = this.$route.params.category
-      this.checkForNumber()
-    }
-  },
   beforeDestroy () {
     this.$modal.EventBus.$off('edit', this.onEdit)
   }
@@ -62,26 +85,26 @@ export default {
 </script>
 
 <style lang="scss">
-  .form{
-    border-radius: 10px;
-    padding : 15px;
-    border: 1px solid black;
-    margin-top : 30px;
-    max-height : 400px;
-    width : max-content;
-    &__item{
-      padding: 5px;
-      margin-right : 20px;
-      border: 1px black solid;
-      border-radius: 10px;
-      outline: none;
-    }
-    &__button{
-      display : block;
-      font-size : 20px;
-      margin-top : 20px;
-      padding: 10px 20px;
-      cursor: pointer;
-    }
-  }
+  // .form{
+  //   border-radius: 10px;
+  //   padding : 15px;
+  //   border: 1px solid black;
+  //   margin-top : 30px;
+  //   max-height : 400px;
+  //   width : max-content;
+  //   &__item{
+  //     padding: 5px;
+  //     margin-right : 20px;
+  //     border: 1px black solid;
+  //     border-radius: 10px;
+  //     outline: none;
+  //   }
+  //   &__button{
+  //     display : block;
+  //     font-size : 20px;
+  //     margin-top : 20px;
+  //     padding: 10px 20px;
+  //     cursor: pointer;
+  //   }
+  // }
 </style>

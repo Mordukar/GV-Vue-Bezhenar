@@ -1,44 +1,27 @@
 <template>
-  <div id="app">
-    <div class="container">
-      <transition name="fade">
-        <Modal class="modal" v-if="modalShown" name="PaymentForm"/>
-      </transition>
-      <header >
-        <h1 class="header">My personal costs</h1>
-        <div class="wrapper">
-          <router-link class="link" to="/dashboard/1">Dashboard</router-link>
-          <router-link class="link" to="/about">About</router-link>
-          <router-link class="link" to="/404">404</router-link>
-        </div>
-      </header>
-      <main>
+  <v-app>
+    <v-app-bar app flat>
+      <v-btn class="link" :ripple="false" plain to="/dashboard/1">Dashboard</v-btn>
+      <v-btn class="link" :ripple="false" plain to="/about">About</v-btn>
+      <v-btn class="link" :ripple="false" plain to="/404">404</v-btn>
+    </v-app-bar>
+    <v-main>
         <router-view />
-      </main>
-    </div>
-  </div>
+    </v-main>
+  </v-app>
 </template>
 
 <script>
 
-import Modal from './components/modalwindows/Modal'
 export default {
   name: 'App',
   components: {
-    Modal
   },
   data () {
     return {
-      modalShown: ''
     }
   },
   methods: {
-    onShow ({ name }) {
-      this.modalShown = name
-    },
-    onClose () {
-      this.modalShown = ''
-    },
     onEdit ({ settings }) {
     }
   },
