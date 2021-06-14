@@ -17,6 +17,7 @@
     <div v-show="checked === true" class="wrapper">
       <div class="buttons">
         <button
+        v-bind:name="item"
         v-for="item in items"
         :key="item"
         @click="sendKey(item)">
