@@ -1,13 +1,5 @@
 <template>
   <div>
-    <!-- <v-btn
-      color="teal"
-      dark
-      @click="showPaymentsForm"
-      >
-        ADD PAYMENT
-      <v-icon>mdi-plus</v-icon>
-    </v-btn> -->
     <transition name="fadeItem">
       <v-data-table
       :headers="tableHeaders"
@@ -20,7 +12,6 @@
 
 <script>
 import { mapGetters } from 'vuex'
-// import ContextMenu from '@/components/context-menu/ContextMenu'
 export default {
   name: 'PaymentsList',
   components: {
@@ -39,7 +30,9 @@ export default {
   },
   props: {
     items: Array,
-    currentPage: Number
+    currentPage: Number,
+    chartdata: Array,
+    options: Array
   },
   computed: {
     ...mapGetters([
@@ -50,11 +43,11 @@ export default {
         obj.index = i + 1
         return obj
       })
-    },
-    currentElements () {
-      const { page, numberPage } = this
-      return this.getPaymentsList.slice(numberPage * (page - 1), numberPage * (page - 1) + numberPage)
     }
+    // currentElements () {
+    //   const { page, numberPage } = this
+    //   return this.getPaymentsList.slice(numberPage * (page - 1), numberPage * (page - 1) + numberPage)
+    // }
   },
   methods: {
     showPaymentsForm () {

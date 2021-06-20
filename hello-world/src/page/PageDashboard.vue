@@ -19,24 +19,40 @@
         </transition>
         <PaymentsList />
       </v-col>
-      <v-col>DIAGRAM</v-col>
+      <v-col><ChartPaymentsList :chartdata="chartData" :options="chartOptions"/></v-col>
     </v-row>
   </div>
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 import PaymentsList from '../components/PaymentsList'
 import Modal from '../components/modalwindows/Modal'
+import ChartPaymentsList from '../components/vue-chart/chartPaymentList'
 
 export default {
   components: {
     PaymentsList,
-    Modal
+    Modal,
+    ChartPaymentsList
   },
   data () {
     return {
-      isActive: false
+      isActive: false,
+      chartData: {},
+      chartOptions: {}
+    }
+  },
+  computed: {
+    ...mapGetters([
+      'getPaymentsList'
+    ]),
+    chartdata () {
+      const arr = this.getPaymentsList
+      const result = arr.map(
+        item => item.category
+      )
+      return result
     }
   },
   methods: {
