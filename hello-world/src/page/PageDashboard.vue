@@ -39,8 +39,30 @@ export default {
   data () {
     return {
       isActive: false,
-      chartData: {},
-      chartOptions: {}
+      chartData: {
+        labels: [
+          'January',
+          'February',
+          'March',
+          'April',
+          'May',
+          'June',
+          'July',
+          'August',
+          'September',
+          'October',
+          'November',
+          'December'
+        ],
+        datasets: [{
+          label: 'Dataset 1',
+          data: [40, 20, 12, 39, 10, 40, 39, 80, 40, 20, 12, 11]
+        }]
+      },
+      chartOptions: {
+        responsive: true,
+        maintainAspectRatio: false
+      }
     }
   },
   computed: {
