@@ -34,31 +34,31 @@ export default new Vuex.Store({
             {
               id: 1,
               date: '13.05.2021',
-              category: 'Education',
+              category: 'Food',
               price: 123
             },
             {
               id: 2,
               date: '12.05.2021',
-              category: 'Education',
+              category: 'Food',
               price: 456
             },
             {
               id: 3,
               date: '11.05.2021',
-              category: 'Education',
+              category: 'Food',
               price: 789
             },
             {
               id: 4,
               date: '10.05.2021',
-              category: 'Education',
+              category: 'Transport',
               price: 0
             },
             {
               id: 5,
               date: '13.05.2021',
-              category: 'Education',
+              category: 'Transport',
               price: 123
             },
             {
@@ -76,19 +76,19 @@ export default new Vuex.Store({
             {
               id: 8,
               date: '10.05.2021',
-              category: 'Education',
+              category: 'Clothing',
               price: 0
             },
             {
               id: 9,
               date: '13.05.2021',
-              category: 'Education',
+              category: 'Clothing',
               price: 123
             },
             {
               id: 10,
               date: '12.05.2021',
-              category: 'Education',
+              category: 'Clothing',
               price: 456
             },
             {
@@ -100,8 +100,8 @@ export default new Vuex.Store({
             {
               id: 12,
               date: '10.05.2021',
-              category: 'Education',
-              price: 0
+              category: 'Transport',
+              price: 222
             }
           ])
         }, 1000)

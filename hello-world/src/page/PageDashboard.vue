@@ -19,7 +19,9 @@
         </transition>
         <PaymentsList />
       </v-col>
-      <v-col><ChartPaymentsList :chartdata="chartData" :options="chartOptions"/></v-col>
+      <v-col>
+        <ChartPaymentsList :chartData="chartNewData" :options="chartOptions"/>
+        </v-col>
     </v-row>
   </div>
 </template>
@@ -39,26 +41,27 @@ export default {
   data () {
     return {
       isActive: false,
-      chartData: {
-        labels: [
-          'January',
-          'February',
-          'March',
-          'April',
-          'May',
-          'June',
-          'July',
-          'August',
-          'September',
-          'October',
-          'November',
-          'December'
-        ],
-        datasets: [{
-          label: 'Dataset 1',
-          data: [40, 20, 12, 39, 10, 40, 39, 80, 40, 20, 12, 11]
-        }]
-      },
+      // chartData: {
+      //   labels: [
+      //     'January',
+      //     'February',
+      //     'March',
+      //     'April',
+      //     'May',
+      //     'June',
+      //     'July',
+      //     'August',
+      //     'September',
+      //     'October',
+      //     'November',
+      //     'December'
+      //   ],
+      //   datasets: [{
+      //     label: 'Dataset 1',
+      //     backgroundColor: '#f87979',
+      //     data: [40, 20, 12, 39, 10, 40, 39, 80, 40, 20, 12, 11]
+      //   }]
+      // },
       chartOptions: {
         responsive: true,
         maintainAspectRatio: false
@@ -69,12 +72,19 @@ export default {
     ...mapGetters([
       'getPaymentsList'
     ]),
-    chartdata () {
+    chartNewData () {
       const arr = this.getPaymentsList
-      const result = arr.map(
+      let labels = arr.map(
         item => item.category
       )
-      return result
+      labels = new Set(labels)
+      labels = Array.from(labels)
+
+      const data = labels.map(label => {
+        const itemsCount = arr.filter(item => item.category === label).reduce((acc, item) => acc + item.price, 0)
+        return itemsCount
+      })
+      return { labels, datasets: [{ label: 'Set 1', data, backgroundColor: '#f87979' }] }
     }
   },
   methods: {
