@@ -1,13 +1,15 @@
 <template>
   <v-app>
-    <v-app-bar app flat>
-      <v-btn class="link" :ripple="false" plain to="/dashboard/1">Dashboard</v-btn>
-      <v-btn class="link" :ripple="false" plain to="/about">About</v-btn>
-      <v-btn class="link" :ripple="false" plain to="/404">404</v-btn>
-    </v-app-bar>
-    <v-main>
-        <router-view />
-    </v-main>
+      <v-app-bar app flat>
+        <v-container>
+          <v-btn class="link" :ripple="false" plain to="/dashboard/1">Dashboard</v-btn>
+          <v-btn class="link" :ripple="false" plain to="/about">About</v-btn>
+          <v-btn class="link" :ripple="false" plain to="/404">404</v-btn>
+        </v-container>
+      </v-app-bar>
+      <v-main>
+          <router-view />
+      </v-main>
   </v-app>
 </template>
 

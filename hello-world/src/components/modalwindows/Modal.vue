@@ -2,6 +2,7 @@
   <div>
     <v-dialog
       v-model="pfs"
+      max-width="30%"
     >
       <template v-slot:activator="{ on }">
         <v-btn
@@ -77,8 +78,8 @@ export default {
   .close{
     position: absolute;
     width: 30px;
-  height: 30px;
-  border-radius: 15px;
+    height: 30px;
+    border-radius: 15px;
     top: 10px;
     right: 10px;
   }

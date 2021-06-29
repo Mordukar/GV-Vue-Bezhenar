@@ -1,28 +1,35 @@
 <template>
   <div class="form">
     <v-text-field
-    @focus="shown = true"
-    v-model="date"
+      @focus="shown = true"
+      v-model="date"
     >
     </v-text-field>
     <v-date-picker
-    v-show="shown"
-    v-model="date"
+      v-show="shown"
+      v-model="date"
     >
     </v-date-picker>
     <v-text-field
-    v-model="category"
-    label="Category"
-    required
+      v-model="category"
+      label="Category"
+      required
     >
     </v-text-field>
     <v-text-field
-    v-model.number="price"
-    label="Value"
-    required
+      v-model.number="price"
+      label="Value"
+      required
     >
     </v-text-field>
-    <button class="form__button" @click="save">Save</button>
+     <v-btn
+        color="teal"
+        dark
+        v-on="on"
+        @click="save"
+        >
+          SAVE
+        </v-btn>
   </div>
 </template>
 
@@ -85,26 +92,26 @@ export default {
 </script>
 
 <style lang="scss">
-  // .form{
-  //   border-radius: 10px;
-  //   padding : 15px;
-  //   border: 1px solid black;
-  //   margin-top : 30px;
-  //   max-height : 400px;
-  //   width : max-content;
-  //   &__item{
-  //     padding: 5px;
-  //     margin-right : 20px;
-  //     border: 1px black solid;
-  //     border-radius: 10px;
-  //     outline: none;
-  //   }
-  //   &__button{
-  //     display : block;
-  //     font-size : 20px;
-  //     margin-top : 20px;
-  //     padding: 10px 20px;
-  //     cursor: pointer;
-  //   }
-  // }
+  .form{
+    border-radius: 10px;
+    padding : 15px;
+    border: 1px solid black;
+    margin-top : 30px;
+    max-height : 400px;
+    & v-text-field{
+      padding: 5px;
+      margin-right : 20px;
+      border: 1px black solid;
+      border-radius: 10px;
+      outline: none;
+    }
+    &__button{
+      background-color: aqua;
+      display : block;
+      font-size : 20px;
+      margin-top : 20px;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+  }
 </style>
