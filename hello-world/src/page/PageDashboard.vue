@@ -18,7 +18,7 @@
       <v-row>
         <v-col>
           <transition name="fade">
-            <Modal name="PaymentForm"/>
+            <Modal v-model="isModalShown" name="PaymentForm"/>
           </transition>
           <PaymentsList />
         </v-col>
@@ -44,6 +44,7 @@ export default {
   },
   data () {
     return {
+      isModalShown: false,
       isActive: false,
       chartOptions: {
         responsive: true,
@@ -78,7 +79,7 @@ export default {
       this.paymentsList.push(data)
     },
     openForm () {
-      this.$modal.show('PaymentForm')
+      this.isModalShown = true
     }
   },
   mounted () {

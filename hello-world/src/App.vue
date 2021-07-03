@@ -26,14 +26,6 @@ export default {
   methods: {
     onEdit ({ settings }) {
     }
-  },
-  mounted () {
-    this.$modal.EventBus.$on('show', this.onShow)
-    this.$modal.EventBus.$on('close', this.onClose)
-  },
-  beforeDestroy () {
-    this.$modal.EventBus.$off('show', this.onShow)
-    this.$modal.EventBus.$off('close', this.onClose)
   }
 }
 </script>

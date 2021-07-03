@@ -25,7 +25,6 @@
      <v-btn
         color="teal"
         dark
-        v-on="on"
         @click="save"
         >
           SAVE

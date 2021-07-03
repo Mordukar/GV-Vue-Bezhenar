@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-dialog
-      v-model="pfs"
+      v-model="showModal"
       max-width="30%"
     >
       <template v-slot:activator="{ on }">
@@ -30,18 +30,25 @@ export default {
   },
   data () {
     return {
-      pfs: false
+      showModal: false
     }
   },
   props: {
-    name: String
+    name: String,
+    value: Boolean
   },
   methods: {
-    onClose () {
-      this.$modal.close()
-    }
   },
   mounted () {
+    this.showModal = this.value
+  },
+  watch: {
+    value: function (isShown) {
+      this.showModal = isShown
+    },
+    showModal: function (isShown) {
+      this.$emit('input', isShown)
+    }
   }
 
 }
